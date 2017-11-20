@@ -32,10 +32,14 @@ string bTREE::locate()
 
 friend bool bTREE::operator ==(const bTREE& lhs, const bTREE& rhs)
 {
+	if(lhs == rhs){return true;}
+	else{return false;}
 }
 
 friend bool bTREE::operator !=(const bTREE& lhs, const bTREE& rhs)
 {
+	if(lhs != rhs){return true;}
+	else{return false;}
 }
 
 friend std::ostream& bTREE::operator <<(std::ostream& out, const bTREE& p)
