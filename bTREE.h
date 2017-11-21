@@ -29,6 +29,7 @@ public:
     bool insert(treeNode*, string, int);
     
     bool find(string);
+	bool find(treeNode*, string);
     
     string locate(string);
 	string locate(treeNode*, string, string); //helper function

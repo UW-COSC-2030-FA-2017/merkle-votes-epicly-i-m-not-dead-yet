@@ -50,8 +50,7 @@ bool bTREE::insert(treeNode *temp, string data, int time)
 
 bool bTREE::find(string input)
 {
-	bool found = false;
-	return found;
+	return find(tree, input);
 }
 
 string bTREE::locate(string input)
@@ -83,6 +82,24 @@ ostream& operator <<(ostream& out, const bTREE& p)
 {
 	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
 	return out;
+}
+
+//helper function for find
+bool bTREE::find(treeNode *temp, string input)
+{
+	if(temp->data == input)
+	{
+		return true;
+	}
+	if(temp->left != NULL)
+	{
+		find(temp->left, input);
+	}
+	if(temp->right != NULL)
+	{
+		find(temp->right, input);
+	}
+	return false;
 }
 
 //helper function for locate
