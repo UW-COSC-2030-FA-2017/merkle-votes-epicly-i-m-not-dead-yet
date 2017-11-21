@@ -1,0 +1,9 @@
+create a helper function for locate in bTREE.cpp
+	check if current node is target
+	otherwise check if left is not null
+		go down if not
+	then check if right is not null
+		go down if not
+
+do initial check in non-helper function locate if target is in tree
+	use find function 
