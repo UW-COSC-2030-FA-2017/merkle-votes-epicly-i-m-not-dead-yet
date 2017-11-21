@@ -8,7 +8,7 @@
 (DONE)do initial check in non-helper function locate if target is in tree
 	use find function
 
-finish find function to allow locate to work properly
+(DONE)finish find function to allow locate to work properly
 	work way through tree
 	maybe use another help function?
 
