@@ -14,7 +14,7 @@ private:
     //some data structure to hold your treeNodes together ...
     //DATASTUCTURE treeNodes tree;
     //any helper private variables you need
-	list<treeNode> *tree;
+	treeNode *tree;
 	int nodeCount;
     
 public:
