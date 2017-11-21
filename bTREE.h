@@ -24,7 +24,7 @@ public:
     int dataInserted();
     int numberOfNodes();
     
-    bool insert(string, int);
+    bool insert(bTREE*,string, int);
     
     bool find(string);
     
