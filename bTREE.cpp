@@ -2,6 +2,8 @@
 #include <iostream>
 #include <list>
 
+using namespace std;
+
 //look at descriptions in pMT.h for guidance on what you might need for these function to actually do
 bTREE::bTREE()
 {
@@ -24,10 +26,9 @@ int bTREE::numberOfNodes()
 	return nodeCount;
 }
 
-bool bTREE::insert(string data, int time)
+bool bTREE::insert(bTREE *temp, string data, int time)
 {
 	/* NEEDS WORK
-	treeNode temp;
 	temp->data = data;
 	temp->time = time;
 	tree->insert(temp,tree->back);
@@ -59,7 +60,7 @@ bool bTREE::operator !=(const bTREE& lhs, const bTREE& rhs)
 	else{return false;}
 }
 
-std::ostream& bTREE::operator <<(std::ostream& out, const bTREE& p)
+ostream& bTREE::operator <<(ostream& out, const bTREE& p)
 {
 	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
 }
