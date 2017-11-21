@@ -6,12 +6,12 @@
 bTREE::bTREE()
 {
 	nodeCount = 0;
-	tree = new list<treeNode>;
+	tree = NULL;
 }
 
 bTREE::~bTREE()
 {
-	delete tree;
+	destroy(tree);
 }
 
 int bTREE::dataInserted()
@@ -26,28 +26,30 @@ int bTREE::numberOfNodes()
 
 bool bTREE::insert(string data, int time)
 {
+	/* NEEDS WORK
 	treeNode temp;
-	temp.data = data;
-	temp.time = time;
+	temp->data = data;
+	temp->time = time;
 	tree->insert(temp,tree->back);
 	nodeCount++;
 	return true;
+	 */ 
 }
 
-bool bTREE::find(string)
+bool bTREE::find(string input)
 {
 	bool found = false;
 	return found;
 }
 
-string bTREE::locate(string target)
+string bTREE::locate(string input)
 {
 	return "";
 }
 
 bool bTREE::operator ==(const bTREE& lhs, const bTREE& rhs)
 {
-	if(lhs == rhs){return true;}
+	if(lhs.tree->data == rhs.tree->data || lhs.tree->time == rhs.tree->time){return true;}
 	else{return false;}
 }
 
@@ -59,5 +61,5 @@ bool bTREE::operator !=(const bTREE& lhs, const bTREE& rhs)
 
 std::ostream& bTREE::operator <<(std::ostream& out, const bTREE& p)
 {
-	
+	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
 }
