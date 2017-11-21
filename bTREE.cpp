@@ -1,6 +1,5 @@
 #include "bTREE.h"
 #include <iostream>
-#include <list>
 
 using namespace std;
 
@@ -46,6 +45,7 @@ bool bTREE::insert(treeNode *temp, string data, int time)
 	else{
 		insert(temp->right, data, time);
 	}
+	return false;
 }
 
 bool bTREE::find(string input)
