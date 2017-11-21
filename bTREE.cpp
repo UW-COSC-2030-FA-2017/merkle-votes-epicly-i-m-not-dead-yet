@@ -56,22 +56,30 @@ bool bTREE::find(string input)
 
 string bTREE::locate(string input)
 {
-	return "";
+	if(tree.data == input)
+	{
+		return "";
+	}
+	if(tree.left != NULL)
+	{
+		locate();
+	}
 }
 
-bool bTREE::operator ==(const bTREE& lhs, const bTREE& rhs)
+bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
 	if(lhs.tree->data == rhs.tree->data || lhs.tree->time == rhs.tree->time){return true;}
 	else{return false;}
 }
 
-bool bTREE::operator !=(const bTREE& lhs, const bTREE& rhs)
+bool operator !=(const bTREE& lhs, const bTREE& rhs)
 {
 	if(lhs != rhs){return true;}
 	else{return false;}
 }
 
-ostream& bTREE::operator <<(ostream& out, const bTREE& p)
+ostream& operator <<(ostream& out, const bTREE& p)
 {
 	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
+	return out;
 }
