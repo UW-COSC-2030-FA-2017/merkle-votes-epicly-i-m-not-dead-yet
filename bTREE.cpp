@@ -13,7 +13,7 @@ bTREE::bTREE()
 
 bTREE::~bTREE()
 {
-	destroy(tree);
+	delete(tree);
 }
 
 int bTREE::dataInserted()
@@ -26,15 +26,26 @@ int bTREE::numberOfNodes()
 	return nodeCount;
 }
 
-bool bTREE::insert(bTREE *temp, string data, int time)
+bool bTREE::insert(treeNode *temp, string data, int time)
 {
-	/* NEEDS WORK
+	if(temp == NULL)
+	{
 	temp->data = data;
 	temp->time = time;
-	tree->insert(temp,tree->back);
 	nodeCount++;
 	return true;
-	 */ 
+	}
+	else if(data < temp->data)
+	{
+		insert(temp->left, data, time);
+	}
+	else if(data > temp->data)
+	{
+		insert(temp->right, data, time);
+	}
+	else{
+		insert(temp->right, data, time);
+	}
 }
 
 bool bTREE::find(string input)
