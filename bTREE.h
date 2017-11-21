@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <list>
 using namespace std;
 
 class bTREE
@@ -8,6 +7,9 @@ class bTREE
     struct treeNode{
         string data;
         int time;
+		treeNode *left;
+		treeNode *right;
+		bool isLeaf();
     };
     
 private:
@@ -24,7 +26,7 @@ public:
     int dataInserted();
     int numberOfNodes();
     
-    bool insert(bTREE*,string, int);
+    bool insert(treeNode*,string, int);
     
     bool find(string);
     
