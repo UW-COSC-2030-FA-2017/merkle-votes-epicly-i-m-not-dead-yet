@@ -26,11 +26,12 @@ public:
     int dataInserted();
     int numberOfNodes();
     
-    bool insert(treeNode*,string, int);
+    bool insert(treeNode*, string, int);
     
     bool find(string);
     
     string locate(string);
+	string locate(treeNode*, string, string); //helper function
     
     
     friend bool operator==(const bTREE& lhs, const bTREE& rhs);
