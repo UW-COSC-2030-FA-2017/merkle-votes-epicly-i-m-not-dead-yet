@@ -15,3 +15,11 @@
 (DONE)edit insert function into binary tree format (currently in search tree format)
 	fill from left to right
 	no string comparison (< or >) 
+
+work on dataInserted
+	what needs to be done?
+
+find out what hashes are needed and how to do it
+
+create functions in pMT.cpp
+	may need helper functions, similar to bTREE.cpp
