@@ -15,26 +15,31 @@ bTREE::~bTREE()
 	delete(tree);
 }
 
+//???
 int bTREE::dataInserted()
 {
 	return 0;
 }
 
+//returns the number of nodes with tree
 int bTREE::numberOfNodes()
 {
 	return nodeCount;
 }
 
+//used to insert data into tree
 bool bTREE::insert(string data, int time)
 {
 	return insert(tree, data, time);
 }
 
+//returns if the input is in the tree
 bool bTREE::find(string input)
 {
 	return find(tree, input);
 }
 
+//returns the path of the location of input (if found in tree)
 string bTREE::locate(string input)
 {
 	if(!find(input))
@@ -48,18 +53,21 @@ string bTREE::locate(string input)
 	return "";
 }
 
+//overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
 	if(lhs.tree->data == rhs.tree->data || lhs.tree->time == rhs.tree->time){return true;}
 	else{return false;}
 }
 
+//overloader for not comparison
 bool operator !=(const bTREE& lhs, const bTREE& rhs)
 {
 	if(lhs != rhs){return true;}
 	else{return false;}
 }
 
+//overloader for output
 ostream& operator <<(ostream& out, const bTREE& p)
 {
 	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
