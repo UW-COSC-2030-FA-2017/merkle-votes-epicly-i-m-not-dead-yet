@@ -1,3 +1,4 @@
+
 (DONE)create a helper function for locate in bTREE.cpp
 	check if current node is target
 	otherwise check if left is not null
@@ -29,3 +30,5 @@ create functions in pMT.cpp
 
 work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
+
+determine what locate functions need to do
