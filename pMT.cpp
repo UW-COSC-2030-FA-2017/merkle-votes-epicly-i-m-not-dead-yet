@@ -129,7 +129,7 @@ pMT operator ^=(const pMT& lhs, const pMT& rhs)
 }
 
 
-ostream& operator <<(std::ostream& out, const pMT& p)
+ostream& operator <<(ostream& out, const pMT& p)
 /**
  * @brief Print out a tree
  * @param out
