@@ -30,6 +30,7 @@ int pMT::insert(string vote, int time)
  */
 
 {
+	return 0;
 }
 
 int pMT::find(string vote, int time, int hashSelect)
@@ -41,7 +42,7 @@ int pMT::find(string vote, int time, int hashSelect)
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
 {
-    
+    return 0;
 }
 
 int pMT::findHash(string mhash)
@@ -51,6 +52,7 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
+	return 0;
 }
 
 
@@ -61,6 +63,7 @@ string pMT::locateData(string vote)
  * @return sequence of L's and R's comprising the movement to the leaf node; else return a dot '.'
  */
 {
+	return "";
 }
 
 string pMT::locateHash(string mhash)
@@ -70,6 +73,7 @@ string pMT::locateHash(string mhash)
  * @return sequence of L's and R's comprising the movement to the hash node, ; else return a dot '.'
  */
 {
+	return "";
 }
 
 
@@ -81,6 +85,7 @@ string pMT::hash_1(string key)
  * @return a hash of the key
  */
 {
+	/*
 	unsigned int a = 378551;
 	unsigned int b = 63689;
 	unsigned int hash = 0;
@@ -92,6 +97,8 @@ string pMT::hash_1(string key)
 	}
 	
 	return hash;
+	 */
+	 return "";
 }
 
 string pMT::hash_2(string key)
@@ -101,6 +108,7 @@ string pMT::hash_2(string key)
  * @return a hash of the key
  */
 {
+	return "";
 }
 
 string pMT::hash_3(string key)
@@ -110,6 +118,7 @@ string pMT::hash_3(string key)
  * @return a hash of the key
  */
 {
+	return "";
 }
 
 bool operator ==(const pMT& lhs, const pMT& rhs)
@@ -120,6 +129,7 @@ bool operator ==(const pMT& lhs, const pMT& rhs)
  * @return true if equal, false otherwise
  */
 {
+	return true;
 }
 
 bool operator !=(const pMT& lhs, const pMT& rhs)
@@ -130,7 +140,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  * @return true if not equal, false otherwise
  */
 {
-    
+	return false;
 }
 
 pMT operator ^=(const pMT& lhs, const pMT& rhs)
@@ -141,7 +151,7 @@ pMT operator ^=(const pMT& lhs, const pMT& rhs)
  * @return true if not equal, false otherwise
  */
 {
-    
+   return lhs; 
 }
 
 
@@ -153,6 +163,7 @@ ostream& operator <<(ostream& out, const pMT& p)
  * @return a tree to the screen
  */
 {
+	return out;
 }
 
 
@@ -164,4 +175,5 @@ pMT operator ^(const pMT& lhs, const pMT& rhs)
  * @return a tree comprised of the right hand side tree nodes that are different from the left
  */
 {
+	return lhs;
 }
