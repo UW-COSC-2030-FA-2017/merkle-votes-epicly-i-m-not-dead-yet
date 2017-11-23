@@ -28,6 +28,9 @@ find out what hashes are needed and how to do it
 create functions in pMT.cpp
 	may need helper functions, similar to bTREE.cpp
 
+make tree before filling
+	this allows for leafs to be already made instead of on the fly
+
 work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
 
