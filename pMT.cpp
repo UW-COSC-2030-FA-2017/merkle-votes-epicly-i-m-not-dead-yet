@@ -1,3 +1,8 @@
+#include "pMT.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 pMT::pMT(int hashSelect)
 /**
@@ -76,6 +81,17 @@ string pMT::hash_1(string key)
  * @return a hash of the key
  */
 {
+	unsigned int a = 378551;
+	unsigned int b = 63689;
+	unsigned int hash = 0;
+	
+	for(size_t i = 0; i < key.length(); i++)
+	{
+		hash = hash * a + key[i];
+		a = a * b;
+	}
+	
+	return hash;
 }
 
 string pMT::hash_2(string key)
