@@ -21,6 +21,7 @@ work on dataInserted
 
 find out what hashes are needed and how to do it
 	***see if you can use hash functions from lab 9
+		if able, will need to find out how to change to string output
 
 create functions in pMT.cpp
 	may need helper functions, similar to bTREE.cpp
