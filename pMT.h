@@ -1,6 +1,6 @@
 #pragma once
 
-#include "bTREE.h"
+#include "bTREE.cpp"
 #include <string>
 using namespace std;
 class pMT
@@ -20,10 +20,11 @@ public:
     
     int insert(string, int);
     
-    int find(string);
+    int find(string, int, int);
     int findHash(string);
     
-    string locate(string);
+    string locateData(string);
+	string locateHash(string);
     
     friend bool operator==(const pMT& lhs, const pMT& rhs);
     
