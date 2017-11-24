@@ -1,4 +1,3 @@
-
 (DONE)create a helper function for locate in bTREE.cpp
 	check if current node is target
 	otherwise check if left is not null
@@ -19,22 +18,14 @@
 
 work on dataInserted
 	what needs to be done?
-	return the number of data nodes in the tree
 
-find out what hashes are needed and how to do it (return strings)
+find out what hashes are needed and how to do it
 	***see if you can use hash functions from lab 9
 		if able, will need to find out how to change to string output
 	check if the output is supposed to be an int or a string
-	write functions first, then comment out
-	will probably need to create own functions, based on mathematical equations
 
 create functions in pMT.cpp
 	may need helper functions, similar to bTREE.cpp
 
-make tree before filling
-	this allows for leafs to be already made instead of on the fly
-
 work on overloader functions in pMT.cpp
-	make sure to check Q&A for any updates on correct outputs
-
-determine what locate functions need to do
+	make sure to check Q&A for any updates on correct outpu
