@@ -108,6 +108,16 @@ string pMT::hash_2(string key)
  * @return a hash of the key
  */
 {
+	/*
+	 * unsigned int hash = 0;
+	 * 
+	 * for(size_t i = 0; i < key.length(); i++)
+	 * {
+	 * hash = key[i] + (hash << 6) + (hash << 16) - hash;
+	 * }
+	 * 
+	 * return hash;
+	 */ 
 	return "";
 }
 
@@ -118,6 +128,16 @@ string pMT::hash_3(string key)
  * @return a hash of the key
  */
 {
+	/*
+	 * unsigned int hash = 5381;
+	 * 
+	 * for(size_t i = 0; i < key.length(); i++)
+	 * {
+	 * hash = ((hash << 5) + hash) + key[i];
+	 * }
+	 * 
+	 * return hash;
+	 */ 
 	return "";
 }
 
