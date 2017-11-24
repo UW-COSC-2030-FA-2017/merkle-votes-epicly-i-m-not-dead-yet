@@ -77,7 +77,7 @@ string pMT::locateHash(string mhash)
 }
 
 
-
+// need to make own function
 string pMT::hash_1(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
@@ -101,6 +101,7 @@ string pMT::hash_1(string key)
 	 return "";
 }
 
+// need to make own function
 string pMT::hash_2(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
@@ -121,6 +122,7 @@ string pMT::hash_2(string key)
 	return "";
 }
 
+// need to make own function
 string pMT::hash_3(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
