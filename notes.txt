@@ -24,6 +24,7 @@ find out what hashes are needed and how to do it
 	***see if you can use hash functions from lab 9
 		if able, will need to find out how to change to string output
 	check if the output is supposed to be an int or a string
+	write functions first, then comment out
 
 create functions in pMT.cpp
 	may need helper functions, similar to bTREE.cpp
