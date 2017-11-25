@@ -151,7 +151,7 @@ bool operator ==(const pMT& lhs, const pMT& rhs)
  * @return true if equal, false otherwise
  */
 {
-	if(lhs.myMerkle == lhs.myMerkle) {return true;}
+	if(lhs.myMerkle == rhs.myMerkle) {return true;}
 	else{return false;}
 }
 
@@ -163,7 +163,8 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  * @return true if not equal, false otherwise
  */
 {
-	return false;
+	if(lhs.myMerkle != rhs.myMerkle) {return true;}
+	else{return false;}
 }
 
 //returns matching pMT if true, null if false
