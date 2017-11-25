@@ -109,17 +109,16 @@ string pMT::hash_2(string key)
  * @return a hash of the key
  */
 {
-	/*
-	 * unsigned int hash = 0;
-	 * 
-	 * for(size_t i = 0; i < key.length(); i++)
-	 * {
-	 * hash = key[i] + (hash << 6) + (hash << 16) - hash;
-	 * }
-	 * 
-	 * return hash;
-	 */ 
-	return "";
+	unsigned int hash = 0;
+	
+	for(size_t i = 0; i < key.length(); i++)
+	{
+	hash = key[i] + (hash << 6) + (hash << 16) - hash;
+	}
+	
+	string hashString = to_string(hash);
+	
+	return hashString;
 }
 
 // need to make own function
