@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <queue>
 using namespace std;
 
 class bTREE
@@ -18,6 +19,7 @@ private:
     //any helper private variables you need
 	treeNode *tree;
 	int nodeCount;
+	queue tracker;
     
 public:
     bTREE();
