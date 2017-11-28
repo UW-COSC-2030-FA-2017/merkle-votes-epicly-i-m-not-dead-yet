@@ -32,6 +32,7 @@ create functions in pMT.cpp
 
 make tree before filling
 	this allows for leafs to be already made instead of on the fly
+	may need a copy constructor with second parameter to create like this
 
 work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
@@ -40,4 +41,4 @@ determine what locate functions need to do
 
 insert using queue
 
-don't need to create XOR overloader function in pMT
+*****don't need to create XOR overloader function in pMT
