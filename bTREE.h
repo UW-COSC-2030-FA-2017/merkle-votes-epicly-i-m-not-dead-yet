@@ -10,7 +10,6 @@ class bTREE
         int time;
 		treeNode *left;
 		treeNode *right;
-		bool isLeaf();
     };
     
 private:
