@@ -22,8 +22,6 @@ work on dataInserted
 	return the number of data nodes in the tree
 
 find out what hashes are needed and how to do it (return strings)
-	***see if you can use hash functions from lab 9
-		if able, will need to find out how to change to string output
 	check if the output is supposed to be an int or a string
 	write functions first, then comment out
 	will probably need to create own functions, based on mathematical equations
@@ -39,3 +37,7 @@ work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
 
 determine what locate functions need to do
+
+insert using queue
+
+don't need to create XOR overloader function in pMT
