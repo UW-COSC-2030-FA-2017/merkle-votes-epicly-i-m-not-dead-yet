@@ -43,5 +43,6 @@ work on overloader functions in pMT.cpp
 determine what locate functions need to do
 
 (IN PROGRESS)insert using queue
+	get help with usage
 
 *****don't need to create XOR overloader function in pMT
