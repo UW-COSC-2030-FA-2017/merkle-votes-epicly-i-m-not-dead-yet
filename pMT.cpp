@@ -219,5 +219,19 @@ pMT operator ^(const pMT& lhs, const pMT& rhs)
  * @return a tree comprised of the right hand side tree nodes that are different from the left
  */
 {
-	return lhs;
+	pMT differ;
+	int limit;
+	//checks for which tree is bigger, if either is
+	if(lhs.myMerkle.numberOfNodes() > rhs.myMerkle.numberOfNodes())
+	{
+		limit = lhs.myMerkle.numberOfNodes();
+	}
+	else{
+		limit = rhs.myMerkle.numberOfNodes();
+	}
+	for(int i = 0; i < limit; i++)
+	{
+		
+	}
+	return differ;
 }
