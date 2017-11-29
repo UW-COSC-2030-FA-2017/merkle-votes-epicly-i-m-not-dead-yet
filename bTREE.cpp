@@ -34,7 +34,7 @@ int bTREE::numberOfNodes()
 //used to insert data into tree
 bool bTREE::insert(string data, int time)
 {
-	return insert(tree, data, time);
+	return insert(tracker, data, time);
 }
 
 //returns if the input is in the tree
