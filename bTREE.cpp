@@ -9,6 +9,9 @@ bTREE::bTREE()
 {
 	nodeCount = 0;
 	tree = NULL;
+	tracker.push(tree); //add root to queue
+	tracker.push(tree->left); //add left to queue first
+	tracker.push(tree->right);
 }
 
 bTREE::~bTREE()
@@ -78,6 +81,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 //helper function for insert
 bool bTREE::insert(treeNode *temp, string data, int time)
 {
+	/*
 	if(temp == NULL)
 	{
 	temp->data = data;
@@ -110,6 +114,18 @@ bool bTREE::insert(treeNode *temp, string data, int time)
 		insert(temp->right->right, data, time);
 	}
 	return false;
+	 */
+	if(tracker.front() == NULL)
+	{
+		temp->data = data;
+		temp->time = time;
+		nodeCount++;
+		return true;
+	}
+	else{
+		tracker.pop();
+		insert(tree, data, time);
+	}
 }
 
 //helper function for find
