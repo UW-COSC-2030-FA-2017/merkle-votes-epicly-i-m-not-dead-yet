@@ -40,7 +40,8 @@ int pMT::insert(string vote, int time)
  */
 
 {
-	return 0;
+	myMerkle.insert(vote,time);
+	return 1;
 }
 
 int pMT::find(string vote, int time, int hashSelect)
