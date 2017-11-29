@@ -46,4 +46,6 @@ determine what locate functions need to do
 (IN PROGRESS)insert using queue
 	get help with usage
 
+parent node of leaf will need to have the hash of its two children nodes
+
 *****don't need to create XOR overloader function in pMT
