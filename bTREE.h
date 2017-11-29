@@ -18,7 +18,7 @@ private:
     //any helper private variables you need
 	treeNode *tree;
 	int nodeCount;
-	queue<treeNode> tracker;  //used for insertion location
+	queue<*treeNode> tracker;  //used for insertion location
     
 public:
     bTREE();
