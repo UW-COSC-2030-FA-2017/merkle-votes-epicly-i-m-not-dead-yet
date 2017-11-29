@@ -176,7 +176,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
 	else{return false;}
 }
 
-//returns matching pMT if true, null if false
+//returns matching pMT if true, null if false (OPTIONAL)
 pMT operator ^=(const pMT& lhs, const pMT& rhs)
 /**
  * @brief XOR between two merkle trees
