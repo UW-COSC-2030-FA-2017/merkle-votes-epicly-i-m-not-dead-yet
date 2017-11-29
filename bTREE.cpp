@@ -79,7 +79,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 }
 
 //helper function for insert
-bool bTREE::insert(treeNode *temp, string data, int time)
+bool bTREE::insert(queue temp, string data, int time)
 {
 	/*
 	if(temp == NULL)
@@ -115,17 +115,29 @@ bool bTREE::insert(treeNode *temp, string data, int time)
 	}
 	return false;
 	 */
-	if(tracker.front() == NULL)
+	if(temp.front() == NULL)
 	{
-		temp->data = data;
-		temp->time = time;
+		temp.front()->data = data;
+		temp.front()->time = time;
 		nodeCount++;
 		return true;
 	}
-	else{
-		tracker.pop();
-		insert(tree, data, time);
+	else if(temp.at(2) == NULL)
+	{
+		temp.at(2)->data = data;
+		temp.at(2)->time = time;
+		nodeCount++;
+		return true;
 	}
+	else if(temp.at(3) == NULL)
+	{
+		temp.at(3)->data = data;
+		temp.at(3)->time = time;
+		temp.pop();
+		nodeCount++;
+		return true;
+	}
+	return false;
 }
 
 //helper function for find
