@@ -79,7 +79,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 }
 
 //helper function for insert
-bool bTREE::insert(queue temp, string data, int time)
+bool bTREE::insert(queue<*treeNode> &temp, string data, int time)
 {
 	/*
 	if(temp == NULL)
