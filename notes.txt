@@ -36,6 +36,7 @@ create functions in pMT.cpp
 make tree before filling
 	this allows for leafs to be already made instead of on the fly
 	may need a copy constructor with second parameter to create like this
+	determine file size and find out how many leaves are needed
 
 work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
