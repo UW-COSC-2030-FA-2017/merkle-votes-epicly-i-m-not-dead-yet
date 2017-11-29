@@ -18,7 +18,7 @@ private:
     //any helper private variables you need
 	treeNode *tree;
 	int nodeCount;
-	queue tracker;
+	queue<treeNode> tracker;
     
 public:
     bTREE();
