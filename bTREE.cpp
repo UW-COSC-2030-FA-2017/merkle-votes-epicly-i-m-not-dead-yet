@@ -16,10 +16,10 @@ bTREE::~bTREE()
 	delete(tree);
 }
 
-//???
+//returns nodes with data (all in this case)
 int bTREE::dataInserted()
 {
-	return 0;
+	return nodeCount;
 }
 
 //returns the number of nodes with tree
