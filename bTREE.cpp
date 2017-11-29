@@ -127,6 +127,8 @@ bool bTREE::insert(queue temp, string data, int time)
 		temp.at(2)->data = data;
 		temp.at(2)->time = time;
 		nodeCount++;
+		temp.push(temp.at(2)->left);
+		temp.push(temp.at(2)->right);
 		return true;
 	}
 	else if(temp.at(3) == NULL)
@@ -135,6 +137,8 @@ bool bTREE::insert(queue temp, string data, int time)
 		temp.at(3)->time = time;
 		temp.pop();
 		nodeCount++;
+		temp.push(temp.at(3)->left);
+		temp.push(temp.at(3)->right);
 		return true;
 	}
 	return false;
