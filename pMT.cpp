@@ -11,6 +11,16 @@ pMT::pMT(int hashSelect)
  * @return 
  */
 {
+	/*
+	switch (hashSelect){
+		case 1:
+		hash_1(string t);
+		case 2:
+		hash_2(string t);
+		case 3:
+		hash_3(string t);
+	}
+	 */
 }
 
 pMT::~pMT()
