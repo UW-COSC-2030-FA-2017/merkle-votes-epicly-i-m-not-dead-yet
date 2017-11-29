@@ -23,6 +23,7 @@ pMT::pMT(int hashSelect)
 	 */
 }
 
+//copy constructor -- creates empy tree of certain size
 pMT::pMT(int hashSelect, int size)
 {
 	for(int i = 0; i < size; i++)
