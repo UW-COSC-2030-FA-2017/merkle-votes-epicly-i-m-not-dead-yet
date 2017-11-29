@@ -17,7 +17,7 @@
 	fill from left to right
 	no string comparison (< or >) 
 
-work on dataInserted
+(DONE)work on dataInserted
 	what needs to be done?
 	return the number of data nodes in the tree
 
