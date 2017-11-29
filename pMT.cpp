@@ -23,6 +23,14 @@ pMT::pMT(int hashSelect)
 	 */
 }
 
+pMT::pMT(int hashSelect, int size)
+{
+	for(int i = 0; i < size; i++)
+	{
+		insert("", 0.0);
+	}
+}
+
 pMT::~pMT()
 /**
  * @brief destructor
