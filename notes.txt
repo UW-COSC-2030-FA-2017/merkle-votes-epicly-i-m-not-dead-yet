@@ -24,7 +24,7 @@
 find out what hashes are needed and how to do it (return strings)
 	check if the output is supposed to be an int or a string
 	write functions first, then comment out
-	will probably need to create own functions, based on mathematical equations
+	will probably need to create own functions, based on mathematical equations -- can get from internetz
 	use to_string method to convert the ints to strings
 
 create functions in pMT.cpp
