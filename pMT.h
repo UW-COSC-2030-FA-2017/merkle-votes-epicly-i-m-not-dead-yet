@@ -15,6 +15,7 @@ private:
     
 public:
     pMT(int);
+	pMT(int, int); //copy constructor
     ~pMT();
     
     
