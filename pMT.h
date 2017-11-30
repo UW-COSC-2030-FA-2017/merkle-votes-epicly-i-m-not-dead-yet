@@ -2,6 +2,7 @@
 
 #include "bTREE.cpp"
 #include <string>
+#include <queue>
 using namespace std;
 class pMT
 {
@@ -12,6 +13,10 @@ private:
     string hash_1(string);
     string hash_2(string);
     string hash_3(string);
+	
+	queue<treeNode> leafTrack;
+	
+	void leafCollection(); //adds all leaves to leafTrack
     
 public:
     pMT(int);
