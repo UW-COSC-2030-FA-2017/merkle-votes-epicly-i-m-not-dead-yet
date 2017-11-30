@@ -34,7 +34,7 @@ int bTREE::numberOfNodes()
 //used to insert data into tree
 bool bTREE::insert(string data, int time)
 {
-	return insert(tracker, data, time);
+	return insert(&tracker, data, time);
 }
 
 //returns if the input is in the tree
@@ -79,7 +79,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 }
 
 //helper function for insert
-bool bTREE::insert(queue<*treeNode> &temp, string data, int time)
+bool bTREE::insert(queue<*treeNode> &tempQ, string data, int time)
 {
 	/*
 	if(temp == NULL)
@@ -115,30 +115,30 @@ bool bTREE::insert(queue<*treeNode> &temp, string data, int time)
 	}
 	return false;
 	 */
-	if(temp.front() == NULL)
+	if(tempQ.front() == NULL)
 	{
-		temp.front()->data = data;
-		temp.front()->time = time;
+		tempQ.front()->data = data;
+		tempQ.front()->time = time;
 		nodeCount++;
 		return true;
 	}
-	else if(temp.at(2) == NULL)
+	else if(tempQ.at(2) == NULL)
 	{
-		temp.at(2)->data = data;
-		temp.at(2)->time = time;
+		tempQ.at(2)->data = data;
+		tempQ.at(2)->time = time;
 		nodeCount++;
-		temp.push(temp.at(2)->left);
-		temp.push(temp.at(2)->right);
+		tempQ.push(temp.at(2)->left);
+		tempQ.push(temp.at(2)->right);
 		return true;
 	}
-	else if(temp.at(3) == NULL)
+	else if(tempQ.at(3) == NULL)
 	{
-		temp.at(3)->data = data;
-		temp.at(3)->time = time;
-		temp.pop();
+		tempQ.at(3)->data = data;
+		tempQ.at(3)->time = time;
+		tempQ.pop();
 		nodeCount++;
-		temp.push(temp.at(3)->left);
-		temp.push(temp.at(3)->right);
+		tempQ.push(temp.at(3)->left);
+		tempQ.push(temp.at(3)->right);
 		return true;
 	}
 	return false;
