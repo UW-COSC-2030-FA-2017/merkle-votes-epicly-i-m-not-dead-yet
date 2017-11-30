@@ -29,7 +29,7 @@ pMT::pMT(int hashSelect, int size)
 		insert("", 0.0);
 		if(i > size && i < size*2)
 		{
-			leafCollection();
+			leafCollection(*myMerkle.tree);
 		}
 	}
 }
@@ -43,9 +43,9 @@ pMT::~pMT()
 }
 
 //adds leaf to collection
-void pMT::leafCollection()
+void pMT::leafCollection(*treeNode temp)
 {
-	
+	leafTrack.push(temp);
 }
 
 int pMT::insert(string vote, int time)

@@ -16,7 +16,7 @@ private:
 	
 	queue<treeNode> leafTrack;
 	
-	void leafCollection(); //adds all leaves to leafTrack
+	void leafCollection(*treeNode); //adds all leaves to leafTrack
     
 public:
     pMT(int);
