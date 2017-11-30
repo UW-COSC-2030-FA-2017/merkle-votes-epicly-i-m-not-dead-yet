@@ -27,6 +27,10 @@ pMT::pMT(int hashSelect, int size)
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
+		if(i > size && i < size*2)
+		{
+			leafCollection();
+		}
 	}
 }
 
@@ -38,7 +42,7 @@ pMT::~pMT()
 {
 }
 
-//recursively finds all leaves in tree (left to right) and add them to leafTrack
+//adds leaf to collection
 void pMT::leafCollection()
 {
 	
