@@ -11,7 +11,6 @@ pMT::pMT(int hashSelect)
  * @return 
  */
 {
-	/*
 	switch (hashSelect){
 		case 1:
 		hash_1(string t);
@@ -20,7 +19,6 @@ pMT::pMT(int hashSelect)
 		case 3:
 		hash_3(string t);
 	}
-	 */
 }
 
 //copy constructor -- creates empy tree of certain size
@@ -116,7 +114,7 @@ string pMT::hash_1(string key)
 		a = a * b;
 	}
 	
-	return hash;
+	return to_string(hash);
 	 */
 	 return "";
 }
@@ -136,9 +134,7 @@ string pMT::hash_2(string key)
 	hash = key[i] + (hash << 6) + (hash << 16) - hash;
 	}
 	
-	string hashString = to_string(hash);
-	
-	return hashString;
+	return to_string(hash);
 }
 
 // need to make own function
@@ -157,7 +153,7 @@ string pMT::hash_3(string key)
 	 * hash = ((hash << 5) + hash) + key[i];
 	 * }
 	 * 
-	 * return hash;
+	 * return to_string(hash);
 	 */ 
 	return "";
 }
