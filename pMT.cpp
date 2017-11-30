@@ -24,6 +24,7 @@ pMT::pMT(int hashSelect)
 //copy constructor -- creates empy tree of certain size
 pMT::pMT(int hashSelect, int size)
 {
+	leafTrack = new queue<*treeNode>;
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
@@ -40,6 +41,7 @@ pMT::~pMT()
  * @return nada
  */
 {
+	delete(leafTrack);
 }
 
 //adds leaf to collection
