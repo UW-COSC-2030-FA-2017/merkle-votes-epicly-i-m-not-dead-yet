@@ -9,6 +9,7 @@ bTREE::bTREE()
 {
 	nodeCount = 0;
 	tree = NULL;
+	tracker = new queue<*treeNode>;
 	tracker.push(tree); //add root to queue
 	tracker.push(tree->left); //add left to queue first
 	tracker.push(tree->right);
@@ -17,6 +18,7 @@ bTREE::bTREE()
 bTREE::~bTREE()
 {
 	delete(tree);
+	delete(tracker);
 }
 
 //returns nodes with data (all in this case)
