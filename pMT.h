@@ -15,9 +15,9 @@ private:
     string hash_2(string);
     string hash_3(string);
 	
-	queue<*treeNode> leafTrack; //queue of leaves
+	queue<treeNode*> leafTrack; //queue of leaves
 	
-	void leafCollection(*treeNode); //adds all leaves to leafTrack
+	void leafCollection(treeNode*); //adds all leaves to leafTrack
     
 public:
     pMT(int);

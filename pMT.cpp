@@ -13,6 +13,7 @@ pMT::pMT(int hashSelect)
  * @return 
  */
 {
+	/*
 	switch (hashSelect){
 		case 1:
 		hash_1(string t);
@@ -21,14 +22,15 @@ pMT::pMT(int hashSelect)
 		case 3:
 		hash_3(string t);
 	}
+	 */ 
 }
 
 //copy constructor -- creates empy tree of certain size
 pMT::pMT(int hashSelect, int size)
 {
-	array<string, size> hashList; //array of all hashes
+	array<string> hashList = new array[size]; //array of all hashes
 	array<pair<string, int>> itemList; //list of all values
-	leafTrack = new queue<*treeNode>;
+	leafTrack = new queue<treeNode*>;
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
