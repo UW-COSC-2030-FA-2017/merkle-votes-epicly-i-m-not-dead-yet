@@ -19,9 +19,8 @@ pMT::pMT()
 pMT::pMT(int hashSelect, int size)
 {
 	selectedHash = hashSelect;
-	arraySize = size;
-	//string hashList[size]; //array of all hashes
-	//pair<string, int> itemList[size]; //list of all values
+	hashList = new string[size]; //array of all hashes
+	itemList = new pair<string, int>[size]; //list of all values
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
