@@ -18,7 +18,7 @@ private:
     //any helper private variables you need
 	treeNode *tree;
 	int nodeCount;
-	queue<*treeNode> tracker;  //used for insertion location
+	//queue<*treeNode> tracker;  //used for insertion location
     
 public:
     bTREE();
@@ -28,7 +28,7 @@ public:
     int numberOfNodes();
     
 	bool insert(string, int);
-    bool insert(treeNode*, string, int); //helper function
+    bool insert(string, int); //helper function
     
     bool find(string);
 	bool find(treeNode*, string); //helper function
