@@ -74,8 +74,13 @@ bool operator ==(const bTREE& lhs, const bTREE& rhs)
 //overloader for not comparison
 bool operator !=(const bTREE& lhs, const bTREE& rhs)
 {
-	if(lhs.tree->data != rhs.tree->data || lhs.tree->time != rhs.tree->time){return true;}
-	else{return false;}
+	if((lhs == NULL && rhs =! NULL) || (rhs == NULL && lhs =! NULL)) {return true;} //checks if only one side has anything
+	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return true;}
+	else{
+		lhs->left == rhs->left;
+		lhs->right == rhs->right;
+	}
+	return false;
 }
 
 //overloader for output
