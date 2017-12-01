@@ -21,8 +21,10 @@
 	what needs to be done?
 	return the number of data nodes in the tree
 
-overloaders in bTREE need to check entire tree
+(DONE)overloaders in bTREE need to check entire tree
 	not just root
+
+create accessor function for private member 'tree' in bTREE
 
 find out what hashes are needed and how to do it (return strings)
 	check if the output is supposed to be an int or a string
