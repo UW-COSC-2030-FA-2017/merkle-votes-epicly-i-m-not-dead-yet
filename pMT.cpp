@@ -126,7 +126,7 @@ int pMT::findHash(string mhash)
 	int opCount = 0; //counter for operations
 	for(int i = 0; i < hashList.size(); i++)
 	{
-		opcount++;
+		opCount++;
 		if(hashList.at(i) == mhash){break;} //stops loop if hash is found in list
 	}
     return opCount;
