@@ -222,6 +222,7 @@ ostream& operator <<(ostream& out, const pMT& p)
  * @return a tree to the screen
  */
 {
+	cout << "";
 	return out;
 }
 
