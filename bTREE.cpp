@@ -9,10 +9,10 @@ bTREE::bTREE()
 {
 	nodeCount = 0;
 	tree = NULL;
-	//tracker = new queue<*treeNode>;
-	//tracker.push(tree); //add root to queue
-	//tracker.push(tree->left); //add left to queue first
-	//tracker.push(tree->right);
+	//tracker = new queue<treeNode*>;
+	tracker.push(tree); //add root to queue
+	tracker.push(tree->left); //add left to queue first
+	tracker.push(tree->right);
 }
 
 bTREE::~bTREE()
@@ -36,7 +36,7 @@ int bTREE::numberOfNodes()
 //used to insert data into tree
 bool bTREE::insert(string data, int time)
 {
-	return insert(tree, data, time);
+	return insert(tracker, data, time);
 }
 
 //returns if the input is in the tree
@@ -62,7 +62,7 @@ string bTREE::locate(string input)
 //overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
-	if((lhs.tree == NULL && rhs.tree =! NULL) || (rhs.tree == NULL && lhs.tree =! NULL)) {return false;} //checks if only one side has anything
+	if((lhs.tree == NULL && rhs.tree != NULL) || (rhs.tree == NULL && lhs.tree != NULL)) {return false;} //checks if only one side has anything
 	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return false;}
 	else if(lhs.tree->left != rhs.tree->left)
 	{
@@ -78,7 +78,7 @@ bool operator ==(const bTREE& lhs, const bTREE& rhs)
 //overloader for not comparison
 bool operator !=(const bTREE& lhs, const bTREE& rhs)
 {
-	if((lhs.tree == NULL && rhs.tree =! NULL) || (rhs.tree == NULL && lhs.tree =! NULL)) {return true;} //checks if only one side has anything
+	if((lhs.tree == NULL && rhs.tree != NULL) || (rhs.tree == NULL && lhs.tree != NULL)) {return true;} //checks if only one side has anything
 	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return true;}
 	else if(lhs.tree->left->data != rhs.tree->left->data && lhs.tree->left->time != rhs.tree->left->time)
 	{
@@ -99,8 +99,9 @@ ostream& operator <<(ostream& out, const bTREE& p)
 }
 
 //helper function for insert
-bool bTREE::insert(treeNode * temp, string data, int time)
+bool bTREE::insert(queue<treeNode*>& tempQ, string data, int time)
 {
+	/*
 	if(temp == NULL)
 	{
 	temp->data = data;
@@ -133,7 +134,7 @@ bool bTREE::insert(treeNode * temp, string data, int time)
 		insert(temp->right->right, data, time);
 	}
 	return false;
-	/*
+	*/
 	if(tempQ.front() == NULL)
 	{
 		tempQ.front()->data = data;
@@ -141,27 +142,26 @@ bool bTREE::insert(treeNode * temp, string data, int time)
 		nodeCount++;
 		return true;
 	}
-	else if(tempQ.at(2) == NULL)
+	else if(tempQ.front()->left == NULL)
 	{
-		tempQ.at(2)->data = data;
-		tempQ.at(2)->time = time;
+		tempQ.front()->left->data = data;
+		tempQ.front()->left->time = time;
 		nodeCount++;
-		tempQ.push(temp.at(2)->left);
-		tempQ.push(temp.at(2)->right);
+		tempQ.push(tempQ.front()->left->left);
+		tempQ.push(tempQ.front()->right->right);
 		return true;
 	}
-	else if(tempQ.at(3) == NULL)
+	else if(tempQ.front()->right == NULL)
 	{
-		tempQ.at(3)->data = data;
-		tempQ.at(3)->time = time;
-		tempQ.pop();
+		tempQ.front()->right->data = data;
+		tempQ.front()->right->time = time;
 		nodeCount++;
-		tempQ.push(temp.at(3)->left);
-		tempQ.push(temp.at(3)->right);
+		tempQ.push(tempQ.front()->right->left);
+		tempQ.push(tempQ.front()->right->right);
+		tempQ.pop();
 		return true;
 	}
 	return false;
-	 */
 }
 
 //helper function for find
