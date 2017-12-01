@@ -47,7 +47,6 @@ pMT::~pMT()
  * @return nada
  */
 {
-	delete(leafTrack);
 }
 
 //adds leaf to collection
