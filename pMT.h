@@ -15,9 +15,11 @@ private:
     string hash_2(string);
     string hash_3(string);
 	
-	queue<treeNode*> leafTrack; //queue of leaves
+	string hashList[]; //array of all hashes
+	pair<string, int> itemList[]; //list of all values
 	
 	void leafCollection(treeNode*); //adds all leaves to leafTrack
+	queue<treeNode*>leafTrack;
     
 public:
     pMT(int);

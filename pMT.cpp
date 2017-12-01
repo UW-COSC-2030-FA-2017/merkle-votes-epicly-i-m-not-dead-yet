@@ -28,15 +28,15 @@ pMT::pMT(int hashSelect)
 //copy constructor -- creates empy tree of certain size
 pMT::pMT(int hashSelect, int size)
 {
-	array<string> hashList = new array[size]; //array of all hashes
-	array<pair<string, int>> itemList; //list of all values
-	leafTrack = new queue<treeNode*>;
+	selectedHash = hashSelect;
+	string hashList[size]; //array of all hashes
+	pair<string, int> itemList[size]; //list of all values
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
 		if(i > size && i < size*2)
 		{
-			leafCollection(*myMerkle.tree);
+			leafCollection(myMerkle.getTree());
 		}
 	}
 }
@@ -50,7 +50,7 @@ pMT::~pMT()
 }
 
 //adds leaf to collection
-void pMT::leafCollection(*treeNode temp)
+void pMT::leafCollection(treeNode *temp)
 {
 	leafTrack.push(temp);
 }
@@ -64,16 +64,16 @@ int pMT::insert(string vote, int time)
  */
 
 {
-	switch case hashSelect
+	switch(selectedHash)
 	case 1:
 		myMerkle.insert(hash_1(vote),time);
 		for(int i = 0; i < hashList.size(); i++)
 		{
-			if(hashList.at(i) == NULL)
+			if(hashList[i] == NULL)
 			{
 				hashList[i] = hash_1(vote);
-				itemList[i.first] = vote;
-				itemList[i.second] = time;
+				itemList[i].first = vote;
+				itemList[i].second = time;
 				break;
 			}
 		}
