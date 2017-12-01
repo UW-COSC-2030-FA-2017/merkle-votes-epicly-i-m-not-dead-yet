@@ -65,6 +65,7 @@ int pMT::insert(string vote, int time)
 
 {
 	switch(selectedHash)
+	{
 	case 1:
 		myMerkle.insert(hash_1(vote),time);
 		for(int i = 0; i < hashList.size(); i++)
@@ -100,6 +101,7 @@ int pMT::insert(string vote, int time)
 			}
 		}
 		return 1;
+	}
 	default:
 		return -1;
 }
