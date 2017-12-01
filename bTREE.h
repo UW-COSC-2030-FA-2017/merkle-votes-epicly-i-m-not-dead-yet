@@ -3,15 +3,14 @@
 #include <queue>
 using namespace std;
 
-class bTREE
-{
     struct treeNode{
         string data;
         int time;
 		treeNode *left;
 		treeNode *right;
     };
-    
+class bTREE
+{  
 private:
     //some data structure to hold your treeNodes together ...
     //DATASTUCTURE treeNodes tree;
