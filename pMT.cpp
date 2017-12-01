@@ -73,7 +73,7 @@ int pMT::find(string vote, int time, int hashSelect)
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
 {
-    return 0;
+	return 0;
 }
 
 int pMT::findHash(string mhash)
@@ -83,7 +83,13 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
-	return 0;
+	int opCount = 0; //counter for operations
+	for(int i = 0; i < hashList.size(); i++)
+	{
+		opcount++;
+		if(hashList.at(i) == mhash){break;} //stops loop if hash is found in list
+	}
+    return opCount;
 }
 
 
