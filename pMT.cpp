@@ -110,7 +110,8 @@ string pMT::locateData(string vote)
  * @return sequence of L's and R's comprising the movement to the leaf node; else return a dot '.'
  */
 {
-	return "";
+	string sequence;
+	return sequence;
 }
 
 string pMT::locateHash(string mhash)
@@ -120,7 +121,8 @@ string pMT::locateHash(string mhash)
  * @return sequence of L's and R's comprising the movement to the hash node, ; else return a dot '.'
  */
 {
-	return "";
+	string sequence;
+	return sequence;
 }
 
 
@@ -132,7 +134,7 @@ string pMT::hash_1(string key)
  * @return a hash of the key
  */
 {
-	/*
+	
 	unsigned int a = 378551;
 	unsigned int b = 63689;
 	unsigned int hash = 0;
@@ -144,8 +146,6 @@ string pMT::hash_1(string key)
 	}
 	
 	return to_string(hash);
-	 */
-	 return "";
 }
 
 // need to make own function
@@ -174,17 +174,16 @@ string pMT::hash_3(string key)
  * @return a hash of the key
  */
 {
-	/*
-	 * unsigned int hash = 5381;
-	 * 
-	 * for(size_t i = 0; i < key.length(); i++)
-	 * {
-	 * hash = ((hash << 5) + hash) + key[i];
-	 * }
-	 * 
-	 * return to_string(hash);
-	 */ 
-	return "";
+	unsigned int hash = 5381;
+	
+	for(size_t i = 0; i < key.length(); i++)
+	{
+	hash = ((hash << 5) + hash) + key[i];
+	}
+	
+	return to_string(hash);
+
+	return to_string(hash);
 }
 
 bool operator ==(const pMT& lhs, const pMT& rhs)
