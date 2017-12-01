@@ -60,8 +60,18 @@ int pMT::insert(string vote, int time)
  */
 
 {
-	myMerkle.insert(vote,time);
-	return 1;
+	switch case hashSelect
+	case 1:
+		myMerkle.insert(hash_1(vote),time);
+		return 1;
+	case 2:
+		myMerkle.insert(hash_2(vote),time);
+		return 1;
+	case 3:
+		myMerkle.insert(hash_3(vote),time);
+		return 1;
+	default:
+		return -1;
 }
 
 int pMT::find(string vote, int time, int hashSelect)
