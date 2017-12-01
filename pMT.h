@@ -10,13 +10,15 @@ class pMT
 private:
     int selectedHash;
     bTREE myMerkle;
+	
+	int arraySize;
     
     string hash_1(string);
     string hash_2(string);
     string hash_3(string);
 	
-	array<string> hashList[]; //array of all hashes
-	array<pair<string, int>> itemList[]; //list of all values
+	array<string, int size> hashList[]; //array of all hashes
+	array<pair<string, int>, int size> itemList[]; //list of all values
 	
 	void leafCollection(treeNode*); //adds all leaves to leafTrack
 	queue<treeNode*>leafTrack;
