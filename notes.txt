@@ -24,7 +24,7 @@
 (DONE)overloaders in bTREE need to check entire tree
 	not just root
 
-create accessor function for private member 'tree' in bTREE
+(DONE)create accessor function for private member 'tree' in bTREE
 
 find out what hashes are needed and how to do it (return strings)
 	check if the output is supposed to be an int or a string
@@ -47,7 +47,7 @@ work on overloader functions in pMT.cpp
 
 determine what locate functions need to do
 
-(IN PROGRESS)insert using queue
+(DONE)insert using queue
 	get help with usage
 
 parent node of leaf will need to have the hash of its two children nodes
