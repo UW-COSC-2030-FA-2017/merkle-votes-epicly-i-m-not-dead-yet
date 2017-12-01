@@ -28,7 +28,7 @@ public:
     int numberOfNodes();
     
 	bool insert(string, int);
-    bool insert(string, int); //helper function
+    bool insert(treeNode*, string, int); //helper function
     
     bool find(string);
 	bool find(treeNode*, string); //helper function

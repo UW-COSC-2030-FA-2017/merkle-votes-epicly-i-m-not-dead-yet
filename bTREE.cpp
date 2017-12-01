@@ -36,7 +36,7 @@ int bTREE::numberOfNodes()
 //used to insert data into tree
 bool bTREE::insert(string data, int time)
 {
-	return insert(data, time);
+	return insert(tree, data, time);
 }
 
 //returns if the input is in the tree
@@ -62,11 +62,15 @@ string bTREE::locate(string input)
 //overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
-	if((lhs == NULL && rhs =! NULL) || (rhs == NULL && lhs =! NULL)) {return false;} //checks if only one side has anything
+	if((lhs.tree == NULL && rhs.tree =! NULL) || (rhs.tree == NULL && lhs.tree =! NULL)) {return false;} //checks if only one side has anything
 	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return false;}
-	else{
-		lhs->left == rhs->left;
-		lhs->right == rhs->right;
+	else if(lhs.tree->left != rhs.tree->left)
+	{
+		return false;
+	}
+	else if(lhs.tree->right != rhs.tree->right)
+	{
+		return false;
 	}
 	return true;
 }
@@ -74,11 +78,15 @@ bool operator ==(const bTREE& lhs, const bTREE& rhs)
 //overloader for not comparison
 bool operator !=(const bTREE& lhs, const bTREE& rhs)
 {
-	if((lhs == NULL && rhs =! NULL) || (rhs == NULL && lhs =! NULL)) {return true;} //checks if only one side has anything
+	if((lhs.tree == NULL && rhs.tree =! NULL) || (rhs.tree == NULL && lhs.tree =! NULL)) {return true;} //checks if only one side has anything
 	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return true;}
-	else{
-		lhs->left == rhs->left;
-		lhs->right == rhs->right;
+	else if(lhs.tree->left->data != rhs.tree->left->data && lhs.tree->left->time != rhs.tree->left->time)
+	{
+		return true;
+	}
+	else if(lhs.tree->right->data != rhs.tree->right->data && lhs.tree->right->time != rhs.tree->right->time)
+	{
+		return true;
 	}
 	return false;
 }
@@ -91,7 +99,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 }
 
 //helper function for insert
-bool bTREE::insert(string data, int time)
+bool bTREE::insert(treeNode * temp, string data, int time)
 {
 	if(temp == NULL)
 	{
