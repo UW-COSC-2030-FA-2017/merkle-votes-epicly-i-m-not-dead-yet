@@ -59,6 +59,11 @@ string bTREE::locate(string input)
 	return "";
 }
 
+treeNode* bTREE::getTree()
+{
+	return tree;
+}
+
 //overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
