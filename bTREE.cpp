@@ -28,7 +28,7 @@ int bTREE::dataInserted()
 }
 
 //returns the number of nodes with tree
-int bTREE::numberOfNodes()
+int bTREE::numberOfNodes() const
 {
 	return nodeCount;
 }

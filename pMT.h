@@ -22,7 +22,7 @@ private:
 	queue<treeNode*>leafTrack;
     
 public:
-    pMT(int);
+    pMT();
 	pMT(int, int); //copy constructor
     ~pMT();
     

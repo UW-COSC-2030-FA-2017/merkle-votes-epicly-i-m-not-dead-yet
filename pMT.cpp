@@ -91,9 +91,9 @@ int pMT::insert(string vote, int time)
 			}
 		}
 		return 1;
-	}
 	default:
 		return -1;
+	}
 }
 
 int pMT::find(string vote, int time, int hashSelect)

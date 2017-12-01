@@ -24,7 +24,7 @@ public:
     ~bTREE();
     
     int dataInserted();
-    int numberOfNodes();
+    int numberOfNodes() const;
     
 	bool insert(string, int);
     bool insert(queue<treeNode*>&, string, int); //helper function
