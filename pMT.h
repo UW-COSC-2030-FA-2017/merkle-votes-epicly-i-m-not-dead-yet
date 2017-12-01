@@ -3,7 +3,7 @@
 #include "bTREE.cpp"
 #include <string>
 #include <queue>
-#inlude <array>
+#include <array>
 using namespace std;
 class pMT
 {

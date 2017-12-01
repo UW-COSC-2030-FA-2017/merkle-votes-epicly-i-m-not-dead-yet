@@ -1,6 +1,8 @@
 #include "pMT.h"
 #include <iostream>
 #include <string>
+#include <array>
+#include <vector>
 
 using namespace std;
 
@@ -25,6 +27,7 @@ pMT::pMT(int hashSelect)
 pMT::pMT(int hashSelect, int size)
 {
 	array<string, size> hashList; //array of all hashes
+	array<pair<string, int>> itemList; //list of all values
 	leafTrack = new queue<*treeNode>;
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
@@ -68,6 +71,8 @@ int pMT::insert(string vote, int time)
 			if(hashList.at(i) == NULL)
 			{
 				hashList[i] = hash_1(vote);
+				itemList[i.first] = vote;
+				itemList[i.second] = time;
 				break;
 			}
 		}
