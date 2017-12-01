@@ -62,8 +62,13 @@ string bTREE::locate(string input)
 //overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
-	if(lhs.tree->data == rhs.tree->data && lhs.tree->time == rhs.tree->time){return true;}
-	else{return false;}
+	if((lhs == NULL && rhs =! NULL) || (rhs == NULL && lhs =! NULL)) {return false;} //checks if only one side has anything
+	if(lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time){return false;}
+	else{
+		lhs->left == rhs->left;
+		lhs->right == rhs->right;
+	}
+	return true;
 }
 
 //overloader for not comparison
