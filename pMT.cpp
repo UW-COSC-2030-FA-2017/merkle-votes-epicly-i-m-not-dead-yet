@@ -21,9 +21,13 @@ pMT::pMT(int hashSelect, int size)
 	for(int i = 0; i < size*2; i++) //need to create 2x the number desired leaves to get correct build
 	{
 		insert("", 0.0);
-		if(i > size && i < size*2)
+		if(i >= size && i <= size*2)
 		{
 			leafCollection(myMerkle.getTree());
+		}
+		if(i >= (size-size/2) && i <= size)
+		{
+			hashLocation(myMerkle.getTree());
 		}
 	}
 	myMerkle.changeTracker(leafTrack); //changes the tracker in bTREE to hold all the leaves
@@ -41,6 +45,11 @@ pMT::~pMT()
 void pMT::leafCollection(treeNode *temp)
 {
 	leafTrack.push(temp);
+}
+
+void pMT::hashLocation(treeNode *temp)
+{
+	hLocations.push(temp);
 }
 
 int pMT::insert(string vote, int time)
