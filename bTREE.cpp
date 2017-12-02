@@ -105,45 +105,45 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs)
 ostream& operator <<(ostream& out, const bTREE& p)
 {
 	string prefix;
-	if( tree_ == NULL )
+	if( p == NULL )
 	{
-		outfile << "-" << std::endl;
+		out << "-" << endl;
 		return out;
 	}
 	else
 	{
-		displayLeft( outfile, tree_->left_, "    " );
-		outfile << "---" << tree_->entry_ << endl;
-		displayRight( outfile, tree_->right_, "    " );
+		displayLeft(output_iterator_tag, p->left, "    " );
+		out << "---" << p->data << endl;
+		displayRight(out, p->right, "    " );
 		return out;
 	}
 }
 
-void bTREE:: displayLeft(ostream & outfile, treeNode *subtree, string prefix )
+void bTREE:: displayLeft(ostream & out, treeNode *subtree, string prefix )
 {
    if( subtree == NULL )
    {
-      outfile << prefix + "/" << std::endl;
+      out << prefix + "/" << endl;
    }
    else
    {
-      displayLeft( outfile, subtree->left_, prefix + "     " );
-      outfile << prefix + "/---" << subtree->entry_ << endl;
-      displayRight( outfile, subtree->right_, prefix + "|    " );
+      displayLeft( out, subtree->left, prefix + "     " );
+      out << prefix + "/---" << subtree->data << endl;
+      displayRight( out, subtree->right, prefix + "|    " );
    }
 }
 
-void treeNode:: displayRight(ostream & outfile, treeNode *subtree, string prefix )
+void treeNode:: displayRight(ostream & out, treeNode *subtree, string prefix )
 {
    if( subtree == NULL )
    {
-      outfile << prefix + "\\" << endl;
+      out << prefix + "\\" << endl;
    }
    else
    {
-      displayLeft( outfile, subtree->left_, prefix + "|    " );
-      outfile << prefix + "\\---" << subtree->entry_ << endl;
-      displayRight( outfile, subtree->right_, prefix + "     " );
+      displayLeft(out, subtree->left, prefix + "|    " );
+      out << prefix + "\\---" << subtree->data << endl;
+      displayRight(out, subtree->right, prefix + "     " );
    }
 }
 
