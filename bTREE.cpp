@@ -105,16 +105,16 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs)
 ostream& operator <<(ostream& out, const bTREE& p)
 {
 	string prefix;
-	if(p->tree == NULL)
+	if(p.tree == NULL)
 	{
 		out << "-" << endl;
 		return out;
 	}
 	else
 	{
-		displayLeft(output_iterator_tag, p->tree->left, "    ");
-		out << "---" << p->tree->data << endl;
-		displayRight(out, p->tree->right, "    " );
+		displayLeft(output_iterator_tag, p.tree->left, "    ");
+		out << "---" << p.tree->data << endl;
+		displayRight(out, p.tree->right, "    " );
 		return out;
 	}
 }
