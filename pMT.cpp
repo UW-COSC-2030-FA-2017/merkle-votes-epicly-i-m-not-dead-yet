@@ -235,6 +235,18 @@ string pMT::hash_3(string key)
 	return to_string(hash);
 }
 
+void pMT::hashItAllOut()
+{
+	switch(hashSelect)
+	{
+		case 1:
+		for(int i = hLocation.size(); i > 0; i--)
+		{
+			hash_1(hLocations[i].left->data + hLocations[i].right->data);
+		}
+	}
+}
+
 bool operator ==(const pMT& lhs, const pMT& rhs)
 /**
  * @brief Comparison between two merkle trees

@@ -30,7 +30,6 @@ public:
 	pMT(int, int); //copy constructor
     ~pMT();
     
-    
     int insert(string, int);
     
     int find(string, int, int);
@@ -38,6 +37,8 @@ public:
     
     string locateData(string);
 	string locateHash(string);
+	
+	void hashItAllOut();
     
     friend bool operator==(const pMT& lhs, const pMT& rhs);
     
