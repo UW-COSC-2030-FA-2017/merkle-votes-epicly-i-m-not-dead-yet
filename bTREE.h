@@ -16,7 +16,7 @@ private:
     //DATASTUCTURE treeNodes tree;
     //any helper private variables you need
 	treeNode *tree;
-	int nodeCount;
+	int nodeCount; //keeps track of current node count
 	queue<treeNode*> tracker;  //used for insertion location
     
 public:
