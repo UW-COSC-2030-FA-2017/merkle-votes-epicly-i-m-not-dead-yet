@@ -105,35 +105,35 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs)
 ostream& operator <<(ostream& out, const bTREE& p)
 {
 	string prefix;
-	if( p == NULL )
+	if(p->tree == NULL)
 	{
 		out << "-" << endl;
 		return out;
 	}
 	else
 	{
-		displayLeft(output_iterator_tag, p->left, "    " );
-		out << "---" << p->data << endl;
-		displayRight(out, p->right, "    " );
+		displayLeft(output_iterator_tag, p->tree->left, "    ");
+		out << "---" << p->tree->data << endl;
+		displayRight(out, p->tree->right, "    " );
 		return out;
 	}
 }
 
-void bTREE:: displayLeft(ostream & out, treeNode *subtree, string prefix )
+void bTREE::displayLeft(ostream & out, treeNode *subtree, string prefix )
 {
-   if( subtree == NULL )
+   if(subtree == NULL)
    {
       out << prefix + "/" << endl;
    }
    else
    {
-      displayLeft( out, subtree->left, prefix + "     " );
+      displayLeft( out, subtree->left, prefix + "     ");
       out << prefix + "/---" << subtree->data << endl;
-      displayRight( out, subtree->right, prefix + "|    " );
+      displayRight( out, subtree->right, prefix + "|    ");
    }
 }
 
-void treeNode:: displayRight(ostream & out, treeNode *subtree, string prefix )
+void treeNode::displayRight(ostream & out, treeNode *subtree, string prefix )
 {
    if( subtree == NULL )
    {

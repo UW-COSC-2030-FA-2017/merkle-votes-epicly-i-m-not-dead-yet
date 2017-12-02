@@ -19,8 +19,8 @@ private:
 	int nodeCount; //keeps track of current node count
 	queue<treeNode*> tracker;  //used for insertion location
 	
-	void bTREE:: displayLeft(ostream &, treeNode*, string);
-	void bTREE:: displayRight(ostream &, treeNode*, string);
+	void displayLeft(ostream &, treeNode*, string);
+	void displayRight(ostream &, treeNode*, string);
     
 public:
     bTREE();
