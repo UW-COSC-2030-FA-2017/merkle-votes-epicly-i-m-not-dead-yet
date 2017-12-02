@@ -18,6 +18,9 @@ private:
 	treeNode *tree;
 	int nodeCount; //keeps track of current node count
 	queue<treeNode*> tracker;  //used for insertion location
+	
+	void bTREE:: displayLeft(ostream &, treeNode*, string);
+	void bTREE:: displayRight(ostream &, treeNode*, string);
     
 public:
     bTREE();
@@ -37,7 +40,8 @@ public:
 	
 	treeNode* getTree(); //accessor method for tree
 	
-	void changeTracker(queue<treeNode*>); //used to change the tracking queue    
+	void changeTracker(queue<treeNode*>); //used to change the tracking queue 
+
     
     friend bool operator==(const bTREE& lhs, const bTREE& rhs);
     friend bool operator!=(const bTREE& lhs, const bTREE& rhs);

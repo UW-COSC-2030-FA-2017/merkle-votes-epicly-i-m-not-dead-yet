@@ -104,8 +104,47 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs)
 //overloader for output
 ostream& operator <<(ostream& out, const bTREE& p)
 {
-	cout << "Time: " << p.tree->time << "\nData: " << p.tree->data;
-	return out;
+	string prefix;
+	if( tree_ == NULL )
+	{
+		outfile << "-" << std::endl;
+		return out;
+	}
+	else
+	{
+		displayLeft( outfile, tree_->left_, "    " );
+		outfile << "---" << tree_->entry_ << endl;
+		displayRight( outfile, tree_->right_, "    " );
+		return out;
+	}
+}
+
+void bTREE:: displayLeft(ostream & outfile, treeNode *subtree, string prefix )
+{
+   if( subtree == NULL )
+   {
+      outfile << prefix + "/" << std::endl;
+   }
+   else
+   {
+      displayLeft( outfile, subtree->left_, prefix + "     " );
+      outfile << prefix + "/---" << subtree->entry_ << endl;
+      displayRight( outfile, subtree->right_, prefix + "|    " );
+   }
+}
+
+void treeNode:: displayRight(ostream & outfile, treeNode *subtree, string prefix )
+{
+   if( subtree == NULL )
+   {
+      outfile << prefix + "\\" << endl;
+   }
+   else
+   {
+      displayLeft( outfile, subtree->left_, prefix + "|    " );
+      outfile << prefix + "\\---" << subtree->entry_ << endl;
+      displayRight( outfile, subtree->right_, prefix + "     " );
+   }
 }
 
 //helper function for insert
