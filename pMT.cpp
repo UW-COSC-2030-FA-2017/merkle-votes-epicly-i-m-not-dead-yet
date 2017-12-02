@@ -56,17 +56,17 @@ int pMT::insert(string vote, int time)
 	case 1:
 		myMerkle.insert(hash_1(vote),time);
 		hashList.push_back(hash_1(vote));
-		itemList.push_back(make_pair(vote, time);
+		itemList.push_back(make_pair(hash_1(vote), time));
 		return 1;
 	case 2:
 		myMerkle.insert(hash_2(vote),time);
 		hashList.push_back(hash_2(vote));
-		itemList.push_back(make_pair(vote, time);
+		itemList.push_back(make_pair(hash_2(vote), time));
 		return 1;
 	case 3:
 		myMerkle.insert(hash_2(vote),time);
 		hashList.push_back(hash_2(vote));
-		itemList.push_back(make_pair(vote, time);
+		itemList.push_back(make_pair(hash_3(vote), time));
 		return 1;
 	default:
 		return -1;
@@ -82,7 +82,29 @@ int pMT::find(string vote, int time, int hashSelect)
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
 {
-	return 0;
+	int opCount = 0;
+	switch(hashSelect)
+	{
+		case 1:
+		for(int i = 0; i < itemList.size(); i++)
+		{
+			opCount++;
+			if(itemList[i] == make_pair(hash_1(vote), time)) {break;}
+		}
+		case 2:
+		for(int i = 0; i < itemList.size(); i++)
+		{
+			opCount++;
+			if(itemList[i] == make_pair(hash_2(vote), time)) {break;}
+		}
+		case 3:
+		for(int i = 0; i < itemList.size(); i++)
+		{
+			opCount++;
+			if(itemList[i] == make_pair(hash_3(vote), time)) {break;}
+		}
+	}
+	return opCount;
 }
 
 int pMT::findHash(string mhash)
