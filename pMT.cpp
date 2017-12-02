@@ -237,7 +237,7 @@ string pMT::hash_3(string key)
 
 void pMT::hashItAllOut()
 {
-	switch(hashSelect)
+	switch(selectedHash)
 	{
 		case 1:
 		for(int i = hLocation.size(); i > 0; i--)
