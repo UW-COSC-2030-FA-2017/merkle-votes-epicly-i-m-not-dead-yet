@@ -15,8 +15,8 @@ private:
     string hash_2(string);
     string hash_3(string);
 	
-	array<string, int> hashList[]; //array of all hashes
-	array<pair<string, int>, int> itemList[]; //list of all values
+	array<string,int> hashList[]; //array of all hashes
+	array<pair<string, int>,int> itemList[]; //list of all values
 	
 	void leafCollection(treeNode*); //adds all leaves to leafTrack
 	queue<treeNode*>leafTrack;
