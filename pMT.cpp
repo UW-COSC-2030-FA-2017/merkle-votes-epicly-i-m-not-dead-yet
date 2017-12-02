@@ -55,38 +55,18 @@ int pMT::insert(string vote, int time)
 	{
 	case 1:
 		myMerkle.insert(hash_1(vote),time);
-		for(int i = 0; i < hashList.size(); i++)
-		{
-			if(hashList[i] == NULL)
-			{
-				hashList[i] = hash_1(vote);
-				itemList[i].first = vote;
-				itemList[i].second = time;
-				break;
-			}
-		}
+		hashList.push_back(hash_1(vote));
+		itemList.push_back(make_pair(vote, time);
 		return 1;
 	case 2:
 		myMerkle.insert(hash_2(vote),time);
-		for(int i = 0; i < hashList.size(); i++)
-		{
-			if(hashList[i] == NULL)
-			{
-				hashList[i] = hash_2(vote);
-				break;
-			}
-		}
+		hashList.push_back(hash_2(vote));
+		itemList.push_back(make_pair(vote, time);
 		return 1;
 	case 3:
-		myMerkle.insert(hash_3(vote),time);
-		for(int i = 0; i < hashList.size(); i++)
-		{
-			if(hashList.at(i) == NULL)
-			{
-				hashList[i] = hash_3(vote);
-				break;
-			}
-		}
+		myMerkle.insert(hash_2(vote),time);
+		hashList.push_back(hash_2(vote));
+		itemList.push_back(make_pair(vote, time);
 		return 1;
 	default:
 		return -1;
