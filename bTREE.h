@@ -36,7 +36,8 @@ public:
 	string locate(treeNode*, string, string); //helper function
 	
 	treeNode* getTree(); //accessor method for tree
-    
+	
+	void changeTracker(queue<treeNode*>); //used to change the tracking queue    
     
     friend bool operator==(const bTREE& lhs, const bTREE& rhs);
     friend bool operator!=(const bTREE& lhs, const bTREE& rhs);

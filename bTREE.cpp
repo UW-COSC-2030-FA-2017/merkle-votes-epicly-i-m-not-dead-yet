@@ -64,6 +64,11 @@ treeNode* bTREE::getTree()
 	return tree;
 }
 
+void bTREE::changeTracker(queue<tracker> change)
+{
+	tracker = change;
+}
+
 //overloader for comparison
 bool operator ==(const bTREE& lhs, const bTREE& rhs)
 {
