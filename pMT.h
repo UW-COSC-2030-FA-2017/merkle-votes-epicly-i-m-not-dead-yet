@@ -11,7 +11,7 @@ private:
     int selectedHash;
     bTREE myMerkle;
 	
-	int pmtSize;
+	constexpr int pmtSize;
     
     string hash_1(string);
     string hash_2(string);
