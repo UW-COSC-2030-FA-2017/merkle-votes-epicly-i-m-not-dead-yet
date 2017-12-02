@@ -73,7 +73,7 @@ int pMT::insert(string vote, int time)
 		myMerkle.insert(hash_2(vote),time);
 		for(int i = 0; i < hashList.size(); i++)
 		{
-			if(hashList.at(i) == NULL)
+			if(hashList[i] == NULL)
 			{
 				hashList[i] = hash_2(vote);
 				break;
@@ -119,7 +119,7 @@ int pMT::findHash(string mhash)
 	for(int i = 0; i < hashList.size(); i++)
 	{
 		opCount++;
-		if(hashList.at(i) == mhash){break;} //stops loop if hash is found in list
+		if(hashList[i] == mhash){break;} //stops loop if hash is found in list
 	}
     return opCount;
 }
