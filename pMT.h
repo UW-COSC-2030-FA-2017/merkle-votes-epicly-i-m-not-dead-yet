@@ -3,7 +3,7 @@
 #include "bTREE.cpp"
 #include <string>
 #include <queue>
-#include <array>
+#include <vector>
 using namespace std;
 class pMT
 {
@@ -17,8 +17,8 @@ private:
     string hash_2(string);
     string hash_3(string);
 	
-	string hashList[pmtSize]; //array of all hashes
-	pair<string, int> itemList[pmtSize]; //list of all values
+	vector<string> hashList; //vector of all hashes
+	vector<pair<string, int>> itemList; //list of all values
 	
 	void leafCollection(treeNode*); //adds all leaves to leafTrack
 	queue<treeNode*>leafTrack;
