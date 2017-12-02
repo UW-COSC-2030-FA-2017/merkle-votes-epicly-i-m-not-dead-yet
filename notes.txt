@@ -45,7 +45,7 @@ make tree before filling
 work on overloader functions in pMT.cpp
 	make sure to check Q&A for any updates on correct outputs
 
-determine what locate functions need to do
+(DONE)determine what locate functions need to do
 
 (DONE)insert using queue
 	get help with usage
