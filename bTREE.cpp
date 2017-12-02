@@ -50,7 +50,7 @@ string bTREE::locate(string input)
 {
 	if(!find(input))
 	{
-		return "-";
+		return ".";
 	}
 	else
 	{
