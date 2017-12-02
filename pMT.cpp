@@ -26,6 +26,7 @@ pMT::pMT(int hashSelect, int size)
 			leafCollection(myMerkle.getTree());
 		}
 	}
+	myMerkle.changeTracker(leafTrack); //changes the tracker in bTREE to hold all the leaves
 }
 
 pMT::~pMT()
