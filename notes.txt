@@ -54,6 +54,7 @@ parent node of leaf will need to have the hash of its two children nodes
 	recursively go through tree to find parents of leaf node
 	may need a helper node to allow for proper recursion
 
-need help with array of pairs
+(DONE)need help with array of pairs
+	changed to vector
 
 *****don't need to create XOR overloader function in pMT
