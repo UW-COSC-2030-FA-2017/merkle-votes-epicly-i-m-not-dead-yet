@@ -82,28 +82,42 @@ int pMT::find(string vote, int time, int hashSelect)
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
 {
-	int opCount = 0;
+	int opCount = 0; //operation counter
+	bool found = false; //used to allow counter to be reset if not found
 	switch(hashSelect)
 	{
 		case 1:
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_1(vote), time)) {break;}
+			if(itemList[i] == make_pair(hash_1(vote), time)) 
+			{
+				found = true;
+				break;
+			}
 		}
 		case 2:
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_2(vote), time)) {break;}
+			if(itemList[i] == make_pair(hash_2(vote), time)) 
+			{
+				found = true;
+				break;
+			}
 		}
 		case 3:
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_3(vote), time)) {break;}
+			if(itemList[i] == make_pair(hash_3(vote), time)) 
+			{
+				found = true;
+				break;
+			}
 		}
 	}
+	if(!found) {opCount = 0;} //resets counter if not found
 	return opCount;
 }
 
@@ -115,11 +129,17 @@ int pMT::findHash(string mhash)
  */
 {
 	int opCount = 0; //counter for operations
+	bool found = false; //used to reset counter if not found
 	for(int i = 0; i < hashList.size(); i++)
 	{
 		opCount++;
-		if(hashList[i] == mhash){break;} //stops loop if hash is found in list
+		if(hashList[i] == mhash) //stops loop if hash is found in list
+		{
+			found = true;
+			break;
+		} 
 	}
+	if(!found) {opCount = 0;} //if not found, reset counter
     return opCount;
 }
 
