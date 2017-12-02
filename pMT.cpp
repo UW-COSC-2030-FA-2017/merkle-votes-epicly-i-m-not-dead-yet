@@ -151,8 +151,7 @@ string pMT::locateData(string vote)
  * @return sequence of L's and R's comprising the movement to the leaf node; else return a dot '.'
  */
 {
-	string sequence;
-	return sequence;
+	return (myMerkle.locate(vote));
 }
 
 string pMT::locateHash(string mhash)
@@ -162,8 +161,7 @@ string pMT::locateHash(string mhash)
  * @return sequence of L's and R's comprising the movement to the hash node, ; else return a dot '.'
  */
 {
-	string sequence;
-	return sequence;
+	return (myMerkle.locate(mhash));
 }
 
 
