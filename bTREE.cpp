@@ -112,7 +112,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 	}
 	else
 	{
-		displayLeft(output_iterator_tag, p.tree->left, "    ");
+		displayLeft(out, p.tree->left, "    ");
 		out << "---" << p.tree->data << endl;
 		displayRight(out, p.tree->right, "    " );
 		return out;
@@ -133,7 +133,7 @@ void bTREE::displayLeft(ostream & out, treeNode *subtree, string prefix )
    }
 }
 
-void treeNode::displayRight(ostream & out, treeNode *subtree, string prefix )
+void bTREE::displayRight(ostream & out, treeNode *subtree, string prefix )
 {
    if( subtree == NULL )
    {
