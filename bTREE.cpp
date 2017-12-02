@@ -119,31 +119,31 @@ ostream& operator <<(ostream& out, const bTREE& p)
 	}
 }
 
-void bTREE::displayLeft(ostream & out, treeNode *subtree, string prefix )
+void bTREE::displayLeft(ostream & out, bTREE *subtree, string prefix )
 {
-   if(subtree == NULL)
+   if(subtree.tree == NULL)
    {
       out << prefix + "/" << endl;
    }
    else
    {
       displayLeft( out, subtree->left, prefix + "     ");
-      out << prefix + "/---" << subtree->data << endl;
-      displayRight( out, subtree->right, prefix + "|    ");
+      out << prefix + "/---" << subtree.tree->data << endl;
+      displayRight( out, subtree.tree->right, prefix + "|    ");
    }
 }
 
-void bTREE::displayRight(ostream & out, treeNode *subtree, string prefix )
+void bTREE::displayRight(ostream & out, bTREE *subtree, string prefix )
 {
-   if( subtree == NULL )
+   if(subtree.tree == NULL)
    {
       out << prefix + "\\" << endl;
    }
    else
    {
-      displayLeft(out, subtree->left, prefix + "|    " );
-      out << prefix + "\\---" << subtree->data << endl;
-      displayRight(out, subtree->right, prefix + "     " );
+      displayLeft(out, subtree.tree->left, prefix + "|    " );
+      out << prefix + "\\---" << subtree.tree->data << endl;
+      displayRight(out, subtree.tree->right, prefix + "     " );
    }
 }
 
