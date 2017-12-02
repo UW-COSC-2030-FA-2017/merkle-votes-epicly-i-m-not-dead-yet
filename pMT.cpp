@@ -12,6 +12,7 @@ pMT::pMT()
  * @return 
  */
 {
+	pmtSize = 0;
 }
 
 //copy constructor -- creates empy tree of certain size
