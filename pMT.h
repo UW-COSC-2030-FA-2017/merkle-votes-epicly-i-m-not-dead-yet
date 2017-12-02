@@ -4,6 +4,7 @@
 #include <string>
 #include <queue>
 #include <vector>
+#include <stack>
 using namespace std;
 class pMT
 {
@@ -23,7 +24,7 @@ private:
 	void leafCollection(treeNode*); //adds all leaves to leafTrack
 	void hashLocation(treeNode*); //adds parents of leaves to hLocations
 	queue<treeNode*>leafTrack;
-	queue<treeNode*>hLocations; //queue filled of parent nodes of leaves
+	stack<treeNode*>hLocations; //queue filled of parent nodes of leaves
     
 public:
     pMT();

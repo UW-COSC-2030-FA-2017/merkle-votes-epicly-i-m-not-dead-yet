@@ -242,7 +242,47 @@ void pMT::hashItAllOut()
 		case 1:
 		for(int i = hLocation.size(); i > 0; i--)
 		{
-			hash_1(hLocations[i].left->data + hLocations[i].right->data);
+			if(hLocations.top()->left == NULL && hLocations.top()->right == NULL)
+			{
+				hash_1(hLocations.top()->left->data + hLocations.top()->right->data);
+			}
+			else if(hLocation.top()->left == NULL)
+			{
+				hash_1(hLocations.top()->left->data);
+			}
+			else{
+				hash_1(hLocations.top()->right->data);
+			}
+		}
+		case 2:
+		for(int i = hLocation.size(); i > 0; i--)
+		{
+			if(hLocations.top()->left == NULL && hLocations.top()->right == NULL)
+			{
+				hash_2(hLocations.top()->left->data + hLocations.top()->right->data);
+			}
+			else if(hLocation.top()->left == NULL)
+			{
+				hash_2(hLocations.top()->left->data);
+			}
+			else{
+				hash_2(hLocations.top()->right->data);
+			}
+		}
+		case 3:
+		for(int i = hLocation.size(); i > 0; i--)
+		{
+			if(hLocations.top()->left == NULL && hLocations.top()->right == NULL)
+			{
+				hash_3(hLocations.top()->left->data + hLocations.top()->right->data);
+			}
+			else if(hLocation.top()->left == NULL)
+			{
+				hash_3(hLocations.top()->left->data);
+			}
+			else{
+				hash_3(hLocations.top()->right->data);
+			}
 		}
 	}
 }
