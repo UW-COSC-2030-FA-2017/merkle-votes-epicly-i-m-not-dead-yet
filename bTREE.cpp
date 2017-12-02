@@ -64,7 +64,7 @@ treeNode* bTREE::getTree()
 	return tree;
 }
 
-void bTREE::changeTracker(queue<tracker> change)
+void bTREE::changeTracker(queue<treeNode*> change)
 {
 	tracker = change;
 }
@@ -111,7 +111,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 //helper function for insert
 bool bTREE::insert(queue<treeNode*>& tempQ, string data, int time)
 {
-	/*
+	/* recursive version of insert (replaced by queue)
 	if(temp == NULL)
 	{
 	temp->data = data;
