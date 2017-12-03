@@ -25,13 +25,15 @@ int main(int argc, char **argv)
 		int time = 0;
 		while(!infile.eof())
 		{
-			cin.getline(infile);
+			string line;
+			getline(infile, line);
 			size++;
 		}
 		pMT mTree(hashSelect, size);
 		while(!infile.eof())
 		{
-			mTree.insert(cin.getline(infile), time);
+			getline(infile, line);
+			mTree.insert(line, time);
 			time++;
 		}
 		
