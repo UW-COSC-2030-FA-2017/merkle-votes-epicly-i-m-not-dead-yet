@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 		pMT mTree(hashSelect, size);
 		while(!infile.eof())
 		{
+			string line;
 			getline(infile, line);
 			mTree.insert(line, time);
 			time++;
