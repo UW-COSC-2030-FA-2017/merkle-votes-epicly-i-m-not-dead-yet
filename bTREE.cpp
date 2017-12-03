@@ -113,7 +113,7 @@ ostream& operator <<(ostream& out, const bTREE& p)
 	else
 	{
 		out << "---" << p.tree->data << endl;
-		out << prefix + "/---" << subtree->tree->data << endl;
+		out << prefix + "/---" << p.tree->left->data << endl;
 		out << prefix + "\\---" << p.tree->right->data << endl;
 		return out;
 	}
