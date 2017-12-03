@@ -230,8 +230,6 @@ string pMT::hash_3(string key)
 	}
 	
 	return to_string(hash);
-
-	return to_string(hash);
 }
 
 void pMT::hashItAllOut()
