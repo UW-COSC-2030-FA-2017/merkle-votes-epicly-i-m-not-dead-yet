@@ -14,6 +14,7 @@ pMT::pMT()
 }
 
 //copy constructor -- creates empy tree of certain size
+//pre-build allows it to never be rehashed, reducing operations needed to hash and insert into tree
 pMT::pMT(int hashSelect, int size)
 {
 	selectedHash = hashSelect;
@@ -46,6 +47,7 @@ void pMT::leafCollection(treeNode *temp)
 	leafTrack.push(temp);
 }
 
+//adds parent of each leaf to list
 void pMT::hashLocation(treeNode *temp)
 {
 	hLocations.push(temp);
@@ -68,14 +70,14 @@ int pMT::insert(string vote, int time)
 		itemList.push_back(make_pair(hash_1(vote), time));
 		return 1;
 	case 2:
-		myMerkle.insert(hash_2(vote),time);
-		hashList.push_back(hash_2(vote));
-		itemList.push_back(make_pair(hash_2(vote), time));
+		myMerkle.insert(vote,time);
+		hashList.push_back(vote);
+		itemList.push_back(make_pair(vote, time));
 		return 1;
 	case 3:
-		myMerkle.insert(hash_2(vote),time);
-		hashList.push_back(hash_2(vote));
-		itemList.push_back(make_pair(hash_3(vote), time));
+		myMerkle.insert(vote,time);
+		hashList.push_back(vote);
+		itemList.push_back(make_pair(vote, time));
 		return 1;
 	default:
 		return -1;
@@ -99,7 +101,7 @@ int pMT::find(string vote, int time, int hashSelect)
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_1(vote), time)) 
+			if(itemList[i] == make_pair(vote, time)) 
 			{
 				found = true;
 				break;
@@ -109,7 +111,7 @@ int pMT::find(string vote, int time, int hashSelect)
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_2(vote), time)) 
+			if(itemList[i] == make_pair(vote, time)) 
 			{
 				found = true;
 				break;
@@ -119,7 +121,7 @@ int pMT::find(string vote, int time, int hashSelect)
 		for(int i = 0; i < itemList.size(); i++)
 		{
 			opCount++;
-			if(itemList[i] == make_pair(hash_3(vote), time)) 
+			if(itemList[i] == make_pair(vote, time)) 
 			{
 				found = true;
 				break;
@@ -309,6 +311,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
 }
 
 //returns matching pMT if true, null if false (OPTIONAL)
+//decided not to do, since I was not confident in how it would turn out
 pMT operator ^=(const pMT& lhs, const pMT& rhs)
 /**
  * @brief XOR between two merkle trees
