@@ -23,14 +23,14 @@ int main(int argc, char **argv)
 	{
 		int size = 0;
 		int time = 0;
-		while(!infile.eof())
+		while(!infile.fail())
 		{
 			string line;
 			getline(infile, line);
 			size++;
 		}
 		pMT mTree(hashSelect, size);
-		while(!infile.eof())
+		while(!infile.fail())
 		{
 			string line;
 			getline(infile, line);
