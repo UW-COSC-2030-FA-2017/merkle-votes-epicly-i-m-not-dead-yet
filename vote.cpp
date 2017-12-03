@@ -21,14 +21,17 @@ int main(int argc, char **argv)
 	if(infile.is_open())
 	{
 		int size = 0;
+		int time = 0;
 		while(!infile.eof())
 		{
+			getline(infile);
 			size++;
 		}
 		pMT mTree(hashSelect, size);
 		while(!infile.eof())
 		{
-			mTree.insert("", 3);
+			mTree.insert(getline(infile), time);
+			time++;
 		}
 		
 		mTree.hashItAllOut();
