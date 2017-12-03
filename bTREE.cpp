@@ -104,7 +104,7 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs)
 //overloader for output
 ostream& operator <<(ostream& out, const bTREE& p)
 {
-	string prefix;
+	string prefix = "     ";
 	if(p.tree == NULL)
 	{
 		out << "-" << endl;
@@ -112,40 +112,13 @@ ostream& operator <<(ostream& out, const bTREE& p)
 	}
 	else
 	{
-		displayLeft(out, p.tree->left, "    ");
 		out << "---" << p.tree->data << endl;
-		displayRight(out, p.tree->right, "    " );
+		out << prefix + "/---" << subtree->tree->data << endl;
+		out << prefix + "\\---" << p.tree->right->data << endl;
 		return out;
 	}
 }
 
-void bTREE::displayLeft(ostream & out, bTREE *subtree, string prefix )
-{
-   if(subtree->tree == NULL)
-   {
-      out << prefix + "/" << endl;
-   }
-   else
-   {
-      subtree->displayLeft( out, subtree->tree->left, prefix + "     ");
-      out << prefix + "/---" << subtree->tree->data << endl;
-      subtree->displayRight( out, subtree->tree->right, prefix + "|    ");
-   }
-}
-
-void bTREE::displayRight(ostream & out, bTREE *subtree, string prefix )
-{
-   if(subtree->tree == NULL)
-   {
-      out << prefix + "\\" << endl;
-   }
-   else
-   {
-      subtree->displayLeft(out, subtree->tree->left, prefix + "|    " );
-      out << prefix + "\\---" << subtree->tree->data << endl;
-      subtree->displayRight(out, subtree->tree->right, prefix + "     " );
-   }
-}
 
 //helper function for insert
 bool bTREE::insert(queue<treeNode*>& tempQ, string data, int time)
