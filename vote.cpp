@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
 	string filename;
 	ifstream infile;
-	pMT mTree;
+	//pMT mTree;
 	int hashSelect;
 	
 	cout << "enter file name: ";
@@ -18,14 +18,14 @@ int main(int argc, char **argv)
 	
 	infile.open(filename);
 	
-	if(filename.is_open)
+	if(infile.is_open)
 	{
 		int size = 0;
 		while(!infile.eof())
 		{
 			size++;
 		}
-		mTree = new pMT(hashSelect, size);
+		pMT mTree(hashSelect, size);
 		while(!infile.eof())
 		{
 			mTree.insert("", 3);
