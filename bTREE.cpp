@@ -127,9 +127,9 @@ void bTREE::displayLeft(ostream & out, bTREE *subtree, string prefix )
    }
    else
    {
-      displayLeft( out, subtree->left, prefix + "     ");
+      subtree->displayLeft( out, subtree->tree->left, prefix + "     ");
       out << prefix + "/---" << subtree->tree->data << endl;
-      displayRight( out, subtree->tree->right, prefix + "|    ");
+      subtree->displayRight( out, subtree->tree->right, prefix + "|    ");
    }
 }
 
@@ -141,9 +141,9 @@ void bTREE::displayRight(ostream & out, bTREE *subtree, string prefix )
    }
    else
    {
-      displayLeft(out, subtree->tree->left, prefix + "|    " );
+      subtree->displayLeft(out, subtree->tree->left, prefix + "|    " );
       out << prefix + "\\---" << subtree->tree->data << endl;
-      displayRight(out, subtree->tree->right, prefix + "     " );
+      subtree->displayRight(out, subtree->tree->right, prefix + "     " );
    }
 }
 
